@@ -29,7 +29,7 @@ Os diretores precisam de respostas às seguintes perguntas:
 9. Se o usuário for mulher, o IMC é a cima ou abaixo da média?
 10. Se for homem, com mais de 50 anos e da região Sudeste, o gasto é maior ou menor que a média de gastos da região?
 
-Os dados fornecidos possuem **"problemas"**, erros que foram propositalmente inseridos no dataset (simulando problemas do mundo real). A proposta é responder às perguntas dos diretores através da elaboração de um dashboard e também detectar os problemas nos dados e decidir como resolvê-los.
+Os dados fornecidos possuem *"problemas"*, erros que foram propositalmente inseridos no dataset (simulando problemas do mundo real). A proposta é responder às perguntas dos diretores através da elaboração de um dashboard e também detectar os problemas nos dados e decidir como resolvê-los.
 
 ## 3. Modelagem dos dados
 
@@ -48,17 +48,17 @@ Como próximo passo e com o objetivo de verificar se o modelo apresentava outras
 </p>
 
 Para resolver essas inconsistências, utilizei uma espécie de atalho, ou seja, ocultei através da filtragem os valores inconsistentes. 
-Obs: É preciso entender que para criar gráficos essa alternativa atende, porém caso fosse trabalhar com machine learning, treinamento de modelo ou tarefas estatísticas mais avançadas, essa opção não seria suficiente, seria necessário  remover realmente esses registros do conjunto de dados.
+Obs: É preciso entender que para criar gráficos essa alternativa atende, porém caso fosse trabalhar com machine learning, treinamento de modelo ou tarefas estatísticas mais avançadas, essa opção não seria suficiente, seria necessário remover realmente esses registros do conjunto de dados.
 
 * Analisando as colunas **Crianças** e **Idade**, conclui-se que não é possível responder as perguntas de número 5 e 6, já que com base nos dados apresentados na **Idade**, não existem crianças nesse dataset.
 * *Realizar  a organização dos dados, onde cada palavra deve ser devidamente acentuada e suas primeiras letras tornarem-se maiúsculas, a fim de deixar o relatório final mais legível.
-* *Correção do tipo de variável utilizada em algumas das colunas, de Texto foram convertidas em Número Inteiro ou Número Decimal. As colunas que sofreram mudanças de tipo de variável foram: Idade (número inteiro), **IMC** (número decimal) e **Valor Seguro Saúde** (número decimal).
+* *Correção do tipo de variável utilizada em algumas das colunas, de Texto foram convertidas em Número Inteiro ou Número Decimal. As colunas que sofreram mudanças de tipo de variável foram: **Idade** (número inteiro), **IMC** (número decimal) e **Valor Seguro Saúde** (número decimal).
 
 <img src="https://user-images.githubusercontent.com/102304054/175753841-e8e8713e-7a05-44dc-9d70-2bc2a57312a6.png"/><a>
 </p>
 
 * *Os grupos de dados* foram criados a partir da opção *Novos grupos de dados* no formato de *Lista* utilizando a coluna **Idade** como referência. Assim, as duas novas colunas chamadas **Faixa Etária** e **Meia Idade** foram preenchidas com informações que separavam os clientes da seguradora em grupos por faixa etária além de mais dois grupos de maior ou menor de 50 anos.
-* Por fim, utilizando a opção *Nova medida*, as duas medidas **Média Idade** e **Média IMC** foram adicionadas ao dataset utilizando a fórmula *AVERAGE* do Power Query, trazendo as médias, respectivamente, da Idade e do IMC dos usuários do plano de saúde.
+* Por fim, utilizando a opção *Nova medida*, as duas medidas *Média Idade* e *Média IMC* foram adicionadas ao dataset utilizando a fórmula *AVERAGE* do Power Query, trazendo as médias, respectivamente, da Idade e do IMC dos usuários do plano de saúde.
 
 <img src="https://user-images.githubusercontent.com/102304054/175753852-28506a34-da83-4dfa-8a54-6649c45edfb5.png"/><a>
 </p>
@@ -72,28 +72,28 @@ Depois desse processo de análise exploratória, foi possível dar início no de
 <img src="https://user-images.githubusercontent.com/102304054/175773573-41cd6db2-b931-495c-8d81-09704ed2b6d3.png"/><a>
 </p>
 
-Para responder a essa pergunta, foi utilizado um **cartão**, trazendo o total da coluna *"Valor_seguro_saude"*.
+Para responder a essa pergunta, foi utilizado um *cartão*, trazendo o total da coluna **"Valor_seguro_saude"**.
 
 **2. Qual é a idade média dos usuários da operadora?**
 
 <img src="https://user-images.githubusercontent.com/102304054/175773579-6a7108a6-e466-44d9-bee6-bb5f9d5077a5.png"/><a>
 </p>
 
-Para responder a essa pergunta, foi criada uma medida chamada de *"Média_Idade"*, utilizando a tabela *"seguro_saude"*, coluna **Idade** e a função *AVERAGE*. A medida *"Média_Idade"*, foi adicionada a um **cartão**.
+Para responder a essa pergunta, foi criada uma medida chamada de *"Média_Idade"*, utilizando a tabela *"seguro_saude"*, coluna **Idade** e a função *AVERAGE*. A medida *"Média_Idade"*, foi adicionada a um *cartão*.
 
 **3. Qual é o gasto médio por região?**
 
 <img src="https://user-images.githubusercontent.com/102304054/175773580-8fe1194f-990a-4c91-9bde-5365318ebbec.png"/><a>
 </p>
 
-Para responder a essa pergunta, foi utilizado um **gráfico de barras**, em eixo a coluna **"Região"** e em valores a coluna **"Valor_seguro_saude"**. Por padrão, o Power BI, inclui como resultado a soma de uma coluna, porém é possível alterar esse valor para média, Mediana, Variação, Desvio padrão, etc. E para o caso a cima, selecionamos a média da coluna correspondente. 
+Para responder a essa pergunta, foi utilizado um *gráfico de barras*, em eixo a coluna **"Região"** e em valores a coluna **"Valor_seguro_saude"**. Por padrão, o Power BI, inclui como resultado a soma de uma coluna, porém é possível alterar esse valor para média, Mediana, Variação, Desvio padrão, etc. E para o caso a cima, selecionamos a média da coluna correspondente. 
 
 **4. Qual é a faixa etária possui maior gasto com seguro saúde por região?**
 
 <img src="https://user-images.githubusercontent.com/102304054/175773585-86d882d0-e46d-4825-95c5-ac29c293e9fb.png"/><a>
 </p>
 
-Para responder a essa pergunta, foi utilizado um **gráfico de barras clusterizado na vertical** e o recurso *"Grupos de dados"*, a fim de criar uma coluna denominada de **"Faixa Etária"**, contendo as faixas etárias contidas no gráfico a cima. 
+Para responder a essa pergunta, foi utilizado um *gráfico de barras clusterizado na vertical* e o recurso *"Grupos de dados"*, a fim de criar uma coluna denominada de **"Faixa Etária"**, contendo as faixas etárias contidas no gráfico a cima. 
 Conclui-se que as pessoas na faixa etária de *"50 à 59"* e região *"Sul"*, possuem um maior gasto com seguro saúde.
 
 **5. As Crianças tem gasto maior que adultos?**
@@ -109,7 +109,7 @@ Assim como na questão 5, não é possível responder a proporção de crianças
 <img src="https://user-images.githubusercontent.com/102304054/175773589-e92b34c7-c88d-4614-b57f-35552683705d.png"/><a>
 </p>
 
-Para responder a essa pergunta, foi utilizado um **gráfico de dispersão**, ou seja, um gráfico de análise bivariada, que mostra a relação de duas variáveis. Nesse estudo de caso, o objetivo é estudar a relação entre a variável **"Idade"** e a variável **"IMC"**. 
+Para responder a essa pergunta, foi utilizado um *gráfico de dispersão*, ou seja, um gráfico de análise bivariada, que mostra a relação de duas variáveis. Nesse estudo de caso, o objetivo é estudar a relação entre a variável **"Idade"** e a variável **"IMC"**. 
 No eixo X foi adicionado os dados relacionados a **"Idade"** e no eixo Y, os dados relacionados ao **"IMC"**. No entanto, para atingir a visualização desejada, é necessário selecionar a opção *"Não resumir"* para que não seja feito nenhum cálculo com os dados. 
 Além disso, foi adicionado uma linha de tendência para facilitar na interpretação do gráfico, sendo possível notar uma tendência positiva, ou seja, aparentemente crescente, concluindo que a medida que a idade aumenta, o IMC aumenta, também.
 
@@ -118,14 +118,14 @@ Além disso, foi adicionado uma linha de tendência para facilitar na interpreta
 <img src="https://user-images.githubusercontent.com/102304054/175773595-6851f881-3afa-4f58-9373-31af38609ba2.png"/><a>
 </p>
 
-Para responder a essa pergunta, foi utilizado um **gráfico de rosca**, a variável **"Sexo"** em detalhes e a variável **"Valor_seguro_saude"** em valores, concluindo que pessoas do sexo Masculino tiveram um gasto maior de Seguro saúde, do que pessoas do sexo Feminino. 
+Para responder a essa pergunta, foi utilizado um *gráfico de rosca*, a variável **"Sexo"** em detalhes e a variável **"Valor_seguro_saude"** em valores, concluindo que pessoas do sexo Masculino tiveram um gasto maior de Seguro saúde, do que pessoas do sexo Feminino. 
 
 **9. Se o usuário for mulher, o IMC é a cima ou abaixo da média?**
 
 <img src="https://user-images.githubusercontent.com/102304054/175773598-bb798aed-6c9e-4d5a-8540-f774209b2476.png"/><a>
 </p>
 
-Para responder a essa pergunta, foi criado uma **tabela** com um **cartão** associado. No cartão foi adicionado a medida *"Média_IMC"*, mostrando a média de IMC de todas as pessoas, totalizando 30.64. E na tabela, a medida *"Média_IMC"* segmentada por sexo, possibilitando a separação das médias de IMC por sexo, concluindo que se a pessoa é do sexo feminino, estará abaixo da média de IMC, já se for do sexo masculino, estará a cima da média de IMC.
+Para responder a essa pergunta, foi criado uma *tabela* com um *cartão* associado. No cartão foi adicionado a medida *"Média_IMC"*, mostrando a média de IMC de todas as pessoas, totalizando 30.64. E na tabela, a medida *"Média_IMC"* segmentada por sexo, possibilitando a separação das médias de IMC por sexo, concluindo que se a pessoa é do sexo feminino, estará abaixo da média de IMC, já se for do sexo masculino, estará a cima da média de IMC.
 
 **10. Se for homem, com mais de 50 anos e da região Sudeste, o gasto é maior ou menor que a média de gastos da região?**
 
@@ -134,7 +134,7 @@ Para responder a essa pergunta, foi criado uma **tabela** com um **cartão** ass
 
 Como proposta de solução dessa pergunta, foi configurado alguns filtros através da opção *"Segmentação de Dados"*.
 
-Primeiramente, para criação do filtro relacionado a *"Meia-Idade"*, foi utilizado novamente o recurso *"Grupos de dados"*, a fim de criar uma coluna denominada de *"Meia-idade"*, contendo a classificação de *"Mais de 50"* e *"Menos de 50"*. Como complemento, foi incluso um filtro específico para *"Região"* e um outro filtro para *"Sexo"*.
+Primeiramente, para criação do filtro relacionado a *"Meia-Idade"*, foi utilizado novamente o recurso *"Grupos de dados"*, a fim de criar uma coluna denominada de **"Meia-idade"**, contendo a classificação de *"Mais de 50"* e *"Menos de 50"*. Como complemento, foi incluso um filtro específico para *"Região"* e um outro filtro para *"Sexo"*.
 
 Em seguida, com o objetivo de realizar a comparação dos valores filtrados, foi adicionado uma tabela com *"valores fixos"* relacionados as respectivas *"Regiões"* e a *"Média de valor seguro Saúde"* por região. Essa tabela, não possui interatividade com os filtros, isto é, ela não sofre alterações quando a filtragem ocorre no dashboard.
 
